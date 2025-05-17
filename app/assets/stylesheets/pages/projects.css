@@ -1,0 +1,137 @@
+.projects-page {
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, #f0f0f0, #fafafa);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.projects-heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #222;
+  font-weight: 700;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #eee;
+  align-items: center;
+  text-align: center;
+  flex: 0 1 300px;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-card h2 {
+  font-size: 1.2rem;
+  color: #4b2aad;
+}
+
+.project-tags {
+  margin-top: 1rem;
+}
+
+.project-tags span {
+  display: inline-block;
+  background: #e5e5f7;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.4rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.project-links {
+  margin-top: 1.5rem;
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #5b3cc4;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-links a:hover {
+  color: #9c5cf2;
+}
+
+.private-repo {
+  background-color: #eee;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-style: italic;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.coming-soon {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.construction-animation img {
+  width: 28px;
+  height: 28px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.live-site-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5b3cc4;
+}
+
+.inline-gif {
+  height: 24px;
+  width: auto;
+}
+
+.coming-text {
+  animation: pulse 2s infinite;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}

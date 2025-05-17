@@ -1,0 +1,45 @@
+<% content_for :title, "Projects" %>
+
+<section class="projects-page">
+  <h1 class="projects-heading">My Projects</h1>
+
+  <div class="projects-grid">
+    <% @projects.each do |project| %>
+      <div class="project-card">
+        <% if project.image.present? %>
+          <img src="<%= project.image %>" alt="<%= project.title %>" class="project-image" />
+        <% end %>
+
+        <div class="project-content">
+          <h2 class="project-title"><%= project.title %></h2>
+          <p class="project-description"><%= truncate(project.description, length: 120) %></p>
+
+          <div class="project-links">
+  <% if project.github.present? && project.github != "n/a" %>
+    <a href="<%= project.github %>" target="_blank">GitHub</a>
+  <% end %>
+
+  <% if project.live_url.present? && project.live_url != "n/a" %>
+    <a href="<%= project.live_url %>" target="_blank">Live</a>
+  <% end %>
+
+  <%= link_to "Details", project_path(project), class: "details-link" %>
+</div>
+
+          <% if params[:admin] == "true" %>
+            <div class="admin-actions">
+              <%= link_to "Edit", edit_project_path(project) %> |
+              <%= link_to "Delete", project_path(project), method: :delete, data: { confirm: "Are you sure?" } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if params[:admin] == "true" %>
+    <div class="new-project-button">
+      <%= link_to "➕ New Project", new_project_path %>
+    </div>
+  <% end %>
+</section>

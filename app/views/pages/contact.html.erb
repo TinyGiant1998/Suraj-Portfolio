@@ -1,0 +1,42 @@
+<div class="contact-container">
+  <h1><i class="fas fa-paper-plane"></i> Let’s Connect</h1>
+  <p>Whether you’ve got a collaboration idea, opportunity, or just want to chat — I’d love to hear from you!</p>
+
+  <div class="contact-split">
+    <div class="contact-illustration">
+      <img src="<%= asset_path('contact1.svg') %>" alt="Say Hello">
+    </div>
+
+    <div class="contact-form-section">
+      <% if flash[:notice] %>
+        <div class="flash notice"><%= flash[:notice] %></div>
+      <% elsif flash[:alert] %>
+        <div class="flash alert"><%= flash[:alert] %></div>
+      <% end %>
+
+      <%= form_with model: @contact, url: send_contact_path, method: :post, local: true, class: "contact-form" do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, placeholder: "Your name", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, placeholder: "Your email", required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :message %>
+          <%= f.text_area :message, placeholder: "Write your message here...", rows: 5, required: true %>
+        </div>
+
+        <%= f.submit "Send Message", class: "submit-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Floating LinkedIn Button -->
+<a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank" class="linkedin-float" title="Connect on LinkedIn">
+  <i class="fab fa-linkedin-in"></i>
+</a>
